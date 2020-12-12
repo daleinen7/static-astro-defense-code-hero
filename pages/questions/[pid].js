@@ -43,7 +43,6 @@ export async function getServerSideProps(context) {
     .collection("questions")
     .find({"set": context.params.pid})
     .sort({ score: -1 })
-    .limit(20)
     .toArray();
 
   return {
